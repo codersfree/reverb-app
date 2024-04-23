@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\App;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,4 +15,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/apps', function () {
+        return view('apps.index');
+    })->name('apps.index');
+});
+
+Route::get('prueba', function(){
+    return config('reverb');
 });
