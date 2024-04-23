@@ -16,7 +16,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/apps', function () {
+    Route::get('/aplicaciones', function () {
         return view('apps.index');
     })->name('apps.index');
 });

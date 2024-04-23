@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\App;
+use Illuminate\Support\Facades\Artisan;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
@@ -33,6 +34,8 @@ class ManageApps extends Component
         $this->apps = App::where('user_id', auth()->id())->get();
 
         $this->reset('name');
+
+        Artisan::call('reverb:restart');
     }
 
     public function delete($id)
