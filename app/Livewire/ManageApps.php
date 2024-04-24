@@ -35,7 +35,7 @@ class ManageApps extends Component
 
         $this->reset('name');
 
-        Artisan::call('reverb:restart');
+        shell_exec('php artisan reverb:restart');
     }
 
     public function delete($id)
