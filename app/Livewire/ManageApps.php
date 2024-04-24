@@ -45,6 +45,8 @@ class ManageApps extends Component
         App::find($id)->delete();
 
         $this->apps = App::where('user_id', auth()->id())->get();
+
+        shell_exec('php ' . base_path('artisan') . ' reverb:restart');
     }
 
     public function render()
