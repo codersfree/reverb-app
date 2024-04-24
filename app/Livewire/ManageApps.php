@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\App;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
@@ -35,9 +36,7 @@ class ManageApps extends Component
 
         $this->reset('name');
 
-        if (env('APP_ENV') === 'production'){
-            shell_exec('/home/cursoprueba-reverb/htdocs/reverb.cursoprueba.online/current/artisan reverb:start');
-        }
+        shell_exec('php ' . base_path('artisan') . ' reverb:restart');
 
     }
 
