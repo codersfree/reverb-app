@@ -35,7 +35,10 @@ class ManageApps extends Component
 
         $this->reset('name');
 
-        shell_exec('php artisan reverb:restart');
+        if (env('APP_ENV') === 'production'){
+            shell_exec('/home/cursoprueba-reverb/htdocs/reverb.cursoprueba.online/current/artisan reverb:start');
+        }
+
     }
 
     public function delete($id)
