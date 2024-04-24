@@ -39,6 +39,13 @@
                         <div>
                             <p>
                                 <span class="font-semibold">
+                                    app id:
+                                </span>
+                                {{$app->app_id}}
+                            </p>
+                            
+                            <p>
+                                <span class="font-semibold">
                                     key:
                                 </span>
                                 {{$app->key}}
@@ -51,12 +58,6 @@
                                 {{$app->secret}}
                             </p>
 
-                            <p>
-                                <span class="font-semibold">
-                                    app id:
-                                </span>
-                                {{$app->app_id}}
-                            </p>
                         </div>
                     </li>
                 @endforeach
